@@ -85,7 +85,8 @@ function setSubmit(e) {
     if (email != '' && email != '' && phone != '' && fullname != '' && city != '' && country != '' && postal != '') {
         value = true
     }
-    if (value == true && shipping !=0 && total != 0) {  
+    if (value == true && shipping !=0 && total != 0) {
+        e.preventDefault()  
         confirm(`
         || Your information was sent successfully ||
         Your E-mail: ${email}
