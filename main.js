@@ -97,8 +97,8 @@ function setSubmit() {
         Total Price: $${total}
         `);
         if (check.checked === true) {
-            window.onbeforeunload;
             alert('Your information was saved correctly');
+            window.onbeforeunload;
         } else {
             reset()
         }
