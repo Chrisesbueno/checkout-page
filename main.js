@@ -69,8 +69,7 @@ fetch(url)
 
 /* SUBMIT CON ALERT */
 
-function setSubmit(e) {
-    // e.preventD
+function setSubmit() {
     const email = document.getElementById('formEmail').value;
     const phone = document.getElementById('formPhone').value;
     const fullname = document.getElementById('formName').value;
@@ -85,8 +84,7 @@ function setSubmit(e) {
     if (email != '' && email != '' && phone != '' && fullname != '' && city != '' && country != '' && postal != '') {
         value = true
     }
-    if (value == true && shipping !=0 && total != 0) {
-        e.preventDefault()  
+    if (value == true && shipping !=0 && total != 0) {  
         confirm(`
         || Your information was sent successfully ||
         Your E-mail: ${email}
@@ -99,17 +97,18 @@ function setSubmit(e) {
         Total Price: $${total}
         `);
         if (check.checked === true) {
-            alert('Your information was saved correctly')
+            window.onbeforeunload;
+            alert('Your information was saved correctly');
         } else {
-            location.reload()
+            reset()
         }
     } else {
         alert("Please enter your info and items");
         return false;
     } 
     
-    // function reset() {
-    //     document.querySelector('form').action = '/'
-    // }
+    function reset() {
+        document.querySelector('form').action = '/checkout-page/'
+    }
 }
 
