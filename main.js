@@ -69,7 +69,8 @@ fetch(url)
 
 /* SUBMIT CON ALERT */
 
-function setSubmit() {
+function setSubmit(e) {
+    // e.preventD
     const email = document.getElementById('formEmail').value;
     const phone = document.getElementById('formPhone').value;
     const fullname = document.getElementById('formName').value;
@@ -99,15 +100,15 @@ function setSubmit() {
         if (check.checked === true) {
             alert('Your information was saved correctly')
         } else {
-            reset()
+            location.reload()
         }
     } else {
         alert("Please enter your info and items");
         return false;
     } 
     
-    function reset() {
-        document.querySelector('form').action = '/'
-    }
+    // function reset() {
+    //     document.querySelector('form').action = '/'
+    // }
 }
 
